@@ -6,8 +6,7 @@ A bot to keep your Aternos server online 24/7, made in Python with ~love~ code. 
 - Support for creative so the bot doesn't die
 
 ## Usage
-### Source code
-To run the bot using the source code download the source code from the [releases](https://github.com/BlueSchnabeltier/aternos-247/releases). Then run the following command in the directory of the code:
+To run the bot download the source code from the [releases](https://github.com/BlueSchnabeltier/aternos-247/releases). Then run the following command in the directory of the code:
 ```bash
 python -m pip install -r requirements.txt
 ```
@@ -15,9 +14,6 @@ Then adjust the config.ini to your liking. After you can run the following comma
 ```bash
 python main.py
 ```
-
-### Prebuilt binaries
-If you are using one of the prebuilt binaries from the [releases](https://github.com/BlueSchnabeltier/aternos-247/releases). Then run it once and then edit the config.ini file in the same directory to your liking. After that, the bot GUI is ready to be used.
 
 ## Screenshots
 ![](https://github.com/BlueSchnabeltier/aternos-247/blob/screenshots/screenshot.png?raw=true) ![](https://github.com/BlueSchnabeltier/aternos-247/blob/screenshots/screenshot2.png?raw=true)
