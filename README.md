@@ -18,3 +18,6 @@ python main.py
 
 ### Prebuilt binaries
 If you are using one of the prebuilt binaries from the [releases](https://github.com/BlueSchnabeltier/aternos-247/releases). Then run it once and then edit the config.ini file in the same directory to your liking. After that, the bot GUI is ready to be used.
+
+### Screenshots
+![](https://github.com/BlueSchnabeltier/aternos-247/blob/screenshots/screenshot.png?raw=true) ![](https://github.com/BlueSchnabeltier/aternos-247/blob/screenshots/screenshot2.png?raw=true)
