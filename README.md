@@ -1,6 +1,5 @@
 # Aternos-24/7
 A bot to keep your Aternos server online 24/7, made in Python with ~love~ code. This project is based on [YTFort/24-Aternos](https://github.com/YTFort/24-Aternos), thanks to [@Forcote](https://www.youtube.com/@Fortcote)! This project has some advantages over the original project including:
-- Prebuilt binaries
 - Better translations & logging system
 - Fix for button presses breaking the bot
 - Support for creative so the bot doesn't die
