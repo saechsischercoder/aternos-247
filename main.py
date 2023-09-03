@@ -3,7 +3,6 @@ from threading import Thread
 from tkextrafont import Font
 from tkinter import ttk, Tk, Label
 from javascript import require, On
-from subprocess import run, DEVNULL
 from configparser import ConfigParser
 
 config = ConfigParser()
@@ -14,13 +13,14 @@ config.read("config.ini")
 username = config.get("bot", "name")
 
 def started(stop):
-    bot = mineflayer.createBot({"host": config.get("server", "host"), "port": config.get("server", "port"), "username": username})
+    global bot
+    bot = mineflayer.createBot({"host": config.get("server", "host"), "port": config.get("server", "port"), "respawn": True if config.get("bot", "auto_respawn") is 1 else False, "username": username})
 
-    print(f"\033[32m[INFO]: {username} is connecting to {config.get('server', 'host')}...")
+    print(f"\033[32m[INFO]: {username} is connecting to {config.get('server', 'host')}...\033[0m")
     
     @On(bot, "login")
     def login(this):
-        print(f"\033[32m[INFO]: {username} successfully connected!")
+        print(f"\033[32m[INFO]: {username} successfully connected!\033[0m")
         bot.chat("/gamemode creative")
         bot.chat(f"{username} connected!")
         bot.setControlState("jump", True)
@@ -29,22 +29,24 @@ def started(stop):
         
     @On(bot, "error")
     def error(err, *a):
-        print("\033[31m[ERROR]: The bot was unable to connect because of: ", err, a)
+        print("\033[31m[ERROR]: The bot was unable to connect because of: ", err, a, "\033[0m")
 
         stop_button.destroy()
-
-        start_button = ttk.Button(root, text="Start", command=lambda: start(start_button))
+        
+        global start_button
+        start_button = ttk.Button(root, text="Start", command=lambda: start())
 
         start_button.place(x=5, y=100, width=205)
     
     @On(bot, "kicked")
     def kicked(this, reason, *a):
-        print("\033[31m[ERROR]: The bot got kicked because of: ", reason, a)
+        print("\033[31m[ERROR]: The bot got kicked because of: ", reason, a, "\033[0m")
         bot.end()
 
         stop_button.destroy()
-
-        start_button = ttk.Button(root, text="Start", command=lambda: start(start_button))
+        
+        global start_button
+        start_button = ttk.Button(root, text="Start", command=lambda: start())
 
         start_button.place(x=5, y=100, width=205)
     
@@ -80,14 +82,10 @@ def start():
 
 def stop():
     try:
-        if platform == "win32":
-            run(["taskkill", "/f", "/im", "node.exe"], stdout=DEVNULL)
-
-        else:
-            run(["killall", "node"], stdout=DEVNULL)
-
+        bot.quit()
+        viewer.quit()
         bot_status.configure(text="The bot is offline", font=("ebrima", 20))
-        print("[INFO]: The bot successfully stopped!")
+        print("\033[32m[INFO]: The bot successfully stopped!\033[0m")
         stop_button.destroy()
 
         global start_button
