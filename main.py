@@ -29,7 +29,7 @@ def started(stop):
         
     @On(bot, "error")
     def error(err, *a):
-        print("\033[31m[ERROR]: The bot was unable to connect because of: ", err, a, "\033[0m")
+        print("\033[31m[ERROR]: The bot was unable to connect because of:", err, a, "\033[0m")
 
         stop_button.destroy()
         
@@ -40,7 +40,7 @@ def started(stop):
     
     @On(bot, "kicked")
     def kicked(this, reason, *a):
-        print("\033[31m[ERROR]: The bot got kicked because of: ", reason, a, "\033[0m")
+        print("\033[31m[ERROR]: The bot got kicked because of:", reason, a, "\033[0m")
         bot.end()
 
         stop_button.destroy()
