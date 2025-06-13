@@ -2,7 +2,7 @@
 
 **Professional Minecraft server uptime bot - keep your Aternos server running 24/7 with intelligent automation and enhanced reliability**
 
-Built with Python and refined through community feedback, this bot ensures your Minecraft server stays online without interruption. Based on the foundation of [YTFort/24-Aternos](https://github.com/YTFort/24-Aternos) with special thanks to [@Forcote](https://www.youtube.com/@Fortcote), this enhanced version delivers superior performance and user experience[1][2][3].
+Built with Python and refined through community feedback, this bot ensures your Minecraft server stays online without interruption. Based on the foundation of [YTFort/24-Aternos](https://github.com/YTFort/24-Aternos) with special thanks to [@Forcote](https://www.youtube.com/@Fortcote), this enhanced version delivers superior performance and user experience.
 
 ## ✨ Key Improvements
 
